@@ -39,7 +39,8 @@ public class Main {
                     } else{
                         System.out.println("choisissez votre prochaine action: ");
                         System.out.println("1. Deposer un montant");
-                        System.out.println("2. Retirer un montant\n");
+                        System.out.println("2. Retirer un montant");
+                        System.out.println("3. Transférer un montant\n");
 
                         Scanner action = new Scanner(System.in);
                         int actionTaken = action.nextInt();
@@ -55,6 +56,16 @@ public class Main {
                                 Scanner montantRetire = new Scanner(System.in);
                                 client.retirer(montantRetire.nextDouble());
                                 break;
+
+                            case 3:
+                                System.out.println("Entrez votre numero de compte: ");
+                                Scanner numComEmetteur = new Scanner(System.in);
+                                System.out.println("Entrez le numero du compte destinataire: ");
+                                Scanner numComDestinataire = new Scanner(System.in);
+                                System.out.println("Entrez le montant à débiter: ");
+                                Scanner montantDebite = new Scanner(System.in);
+
+                                manager.transferer(numComEmetteur.nextInt(), numComDestinataire.nextInt(), montantDebite.nextDouble());
 
                             default:
 
