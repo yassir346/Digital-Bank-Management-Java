@@ -74,21 +74,36 @@ public class Main {
                             System.out.println("Pour créer un compte entrez les informations suivantes: ");
                             System.out.println("Nom: ");
                             Scanner nom = new Scanner(System.in);
-
+                            String nomTape = nom.nextLine();
                             System.out.println("Prénom: ");
                             Scanner prenom = new Scanner(System.in);
+                            String prenomTape = prenom.nextLine();
                             System.out.println("Email: ");
                             Scanner email = new Scanner(System.in);
+                            String emailTape = email.nextLine();
                             System.out.println("Age: ");
                             Scanner age = new Scanner(System.in);
+                            int ageTape = prenom.nextInt();
                             System.out.println("Tel: ");
                             Scanner tel = new Scanner(System.in);
+                            int telTape = tel.nextInt();
                             System.out.println("Numéro compte: ");
                             Scanner numero_compte = new Scanner(System.in);
+                            int numero_compteTape = numero_compte.nextInt();
                             System.out.println("Type de compte: ");
                             Scanner typeCompte = new Scanner(System.in);
+                            String typeCompteTape = typeCompte.nextLine();
 
+                            String clientTape = prenomTape + prenomTape;
 
+                            manager.ajouterCompte(new Client(nomTape, prenomTape, emailTape, ageTape, telTape, numero_compteTape, 0, typeCompteTape));
+
+                            break;
+
+                        case 2:
+                            System.out.println("Entrez le numéro de compte que vous voulez récupérer: ");
+                            Scanner numeroDeCompteArecupere = new Scanner(System.in);
+                            System.out.println(manager.retrouverCompte(numeroDeCompteArecupere.nextInt()));
                     }
                 }
             }while(choixEntre != 0);
