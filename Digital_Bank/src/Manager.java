@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
-public class Manager {
+public class Manager extends Personne{
+
     private ArrayList<Client> clients = new ArrayList<>();
+
+    public Manager(String nom, String prenom, String email, int age, int tel) {
+        super(nom, prenom, email, age, tel);
+    }
 
     public void ajouterCompte(Client client){
         clients.add(client);
@@ -14,7 +19,7 @@ public class Manager {
                 return clt;
             }
         }
-        System.out.println("Account not found");
+        System.out.println("Compte n'est pas trouvé.");
         return null;
     }
 
